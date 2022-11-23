@@ -3,7 +3,6 @@ name : Build Front-End
 on: [push]
 
 jobs:
-
   build:
     runs-on : ubuntu-latest
     steps:
@@ -19,4 +18,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: rojen33/frontEnd:latest
+        tags: rojen33/frontend:latest
