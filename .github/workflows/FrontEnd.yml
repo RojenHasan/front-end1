@@ -1,0 +1,22 @@
+name : Build Front-End
+
+on: [push]
+
+jobs:
+
+  build:
+    runs-on : ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Login 
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERUSERNAME }}
+        password: ${{ secrets.DOCKERTOKEN }}
+    - name: Build image
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        push: true
+        tags: rojen33/frontEnd:latest
