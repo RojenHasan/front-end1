@@ -1,13 +1,13 @@
-FROM node:12.2.0-alpine
+FROM node:17-alpine3.15
 
-WORKDIR /app  
+WORKDIR /app
 
-COPY package.json .  
+COPY package.json .
 
 RUN npm install
 
-COPY . .  
+COPY . .
 
-EXPOSE 3000  
+EXPOSE 3000
 
 CMD ["npm","start"]
